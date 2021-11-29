@@ -1,5 +1,8 @@
 # OrderOptimizer Gem Changelog
 
+## 0.5.1 (2021-11-29)
+-  Consider `max_quantity` when desired exceeds OR EQUALS max_quantity
+
 ## 0.5.0 (2021-04-15)
 - Add `maximum_quantity` for SKUs
 

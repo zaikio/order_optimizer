@@ -55,7 +55,7 @@ class OrderOptimizer
   def count_and_remainder_for_sku(quantity, sku)
     count, remainder = quantity.divmod(sku.quantity)
 
-    if sku.max_quantity && count * sku.quantity > sku.max_quantity
+    if sku.max_quantity && count * sku.quantity >= sku.max_quantity
       new_count = (sku.max_quantity / sku.quantity).ceil
       remainder = (count - new_count) * sku.quantity
 

@@ -279,10 +279,10 @@ class OrderOptimizerTest < Minitest::Test
       '10-pack' => { quantity: 10, price_per_sku: 60, max_quantity: 10 }
     )
 
-    order = optimizer.cheapest_order(required_qty: 20)
-    assert_equal 20, order.quantity
-    assert_equal 150, order.total
-    assert_equal({ '10-pack' => 1, '1-pack' => 10 }, order.skus)
+    order = optimizer.cheapest_order(required_qty: 19)
+    assert_equal 19, order.quantity
+    assert_equal 141, order.total
+    assert_equal({ '10-pack' => 1, '1-pack' => 9 }, order.skus)
 
     optimizer = OrderOptimizer.new(
       '1-pack' => { quantity: 1, price_per_sku: 9 },
